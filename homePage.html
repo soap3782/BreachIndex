@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BreachIndex - Web App Susceptibility Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4bb.png">
+    <link rel="stylesheet" href="homePage.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-title">BreachIndex</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Test Your Web App's Security</h1>
+        <p>
+            Enter any website URL to analyze its potential hacking susceptibility.<br>
+            Get instant feedback and learn how to improve your web app security! 🔒
+        </p>
+    </section>
+
+    <!-- URL Input + Result -->
+    <section class="url-input-section">
+        <label for="url-input">Paste the web app URL:</label>
+        <input type="url" id="url-input" class="url-bar" placeholder="https://yourapp.com" autocomplete="off" required>
+        <button class="analyze-btn" id="analyze-btn">Analyze</button>
+        <div class="result-area" id="result-area"></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-title">About BreachIndex</div>
+        <p>
+            BreachIndex is a simple, minimalist tool for anyone to get a quick overview of their web app's potential exposure to hacking attempts. We provide simulated analysis using browser-accessible signals, best-practices checks, and fun scoring.
+        </p>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="section-title">Features</div>
+        <div class="features-list">
+            <div class="feature-item">
+                <strong>✔️ Easy to Use</strong>
+                <p>Just paste your web app’s URL and click analyze!</p>
+            </div>
+            <div class="feature-item">
+                <strong>💡 Modern Design</strong>
+                <p>Minimalist, smooth UI for distraction-free analysis.</p>
+            </div>
+            <div class="feature-item">
+                <strong>🔒 Security Education</strong>
+                <p>Learn about common web vulnerabilities and how to avoid them.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-title">Frequently Asked Questions</div>
+        <ul class="faq-list">
+            <li>
+                <div class="faq-q">Is this a real hacking scanner?</div>
+                <div class="faq-a">For full analysis, server-side tools are required. BreachIndex provides a demo "susceptibility" check based on best practices.</div>
+            </li>
+            <li>
+                <div class="faq-q">Can this scan any website?</div>
+                <div class="faq-a">Due to browser security (CORS), only some public sites allow analysis. For best results, test your own web apps!</div>
+            </li>
+            <li>
+                <div class="faq-q">How can I improve my web app's security?</div>
+                <div class="faq-a">Follow best practices: use HTTPS, sanitize user input, implement proper authentication, keep dependencies updated.</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="section-title">Contact Us</div>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="3" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 BreachIndex. All rights reserved.
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="homePage.js"></script>
+</body>
+</html>
