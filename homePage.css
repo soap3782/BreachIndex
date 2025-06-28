@@ -123,3 +123,22 @@ html, body {
     .about, .features, .faq, .contact { padding: 1.2rem;}
     .hero { padding: 2rem 1rem;}
 }
+.parallax {
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'); /* Use your favorite image! */
+    min-height: 340px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    border-radius: 0 0 32px 32px;
+    box-shadow: var(--shadow);
+}
+@media (max-width: 800px) {
+    .parallax {
+        background-attachment: scroll; /* Disable on mobile for performance */
+        min-height: 160px;
+        border-radius: 0 0 16px 16px;
+    }
+}

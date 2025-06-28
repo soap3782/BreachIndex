@@ -60,3 +60,4 @@ document.querySelector('.contact-form').onsubmit = (e) => {
     alert("Message sent! We'll get back to you soon. 👍");
     e.target.reset();
 };
+
