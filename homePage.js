@@ -61,3 +61,58 @@ document.querySelector('.contact-form').onsubmit = (e) => {
     e.target.reset();
 };
 
+// Security Assessor Form 
+document.getElementById('assessor-form').onsubmit = (e) => {
+    e.preventDefault();
+
+    // Get form data
+    const incidentType = document.getElementById('incident-type').value;
+    const businessSize = document.getElementById('business-size').value;
+    const recordsExposed = parseInt(document.getElementById('records-exposed').value);
+    const dataType = document.getElementById('data-type').value;
+    const insuranceCoverage = document.getElementById('insurance-coverage').value;
+
+    // Basic cost factors (in USD)
+    const costFactors = {
+        'data-breach': {
+            small: 500000,
+            medium: 2000000,
+            large: 10000000
+        },
+        'ransomware': {
+            small: 1000000,
+            medium: 4000000,
+            large: 15000000
+        }
+    };
+
+    const dataTypeMultiplier = {
+        personal: 1.2,
+        financial: 1.5,
+        health: 2,
+        corporate: 1.1
+    };
+
+    const insuranceMultiplier = insuranceCoverage === 'yes' ? 0.8 : 1;  // 20% discount if insurance
+
+    // Calculate the base cost for breach or ransomware
+    let baseCost = costFactors[incidentType][businessSize] * recordsExposed * dataTypeMultiplier[dataType];
+
+    // Apply insurance discount
+    baseCost *= insuranceMultiplier;
+
+    // Format the result
+    const result = `
+        <div><strong>Incident Type:</strong> ${incidentType === 'data-breach' ? 'Data Breach' : 'Ransomware Attack'}</div>
+        <div><strong>Business Size:</strong> ${businessSize.charAt(0).toUpperCase() + businessSize.slice(1)}</div>
+        <div><strong>Records Exposed:</strong> ${recordsExposed.toLocaleString()}</div>
+        <div><strong>Data Type:</strong> ${dataType.charAt(0).toUpperCase() + dataType.slice(1)}</div>
+        <div><strong>Insurance Coverage:</strong> ${insuranceCoverage === 'yes' ? 'Yes' : 'No'}</div>
+        <div style="margin-top: 1rem; font-weight: 700; font-size: 1.3rem;">
+            <strong>Total Estimated Cost: $${baseCost.toLocaleString()}</strong>
+        </div>
+    `;
+
+    // Show result in the result area
+    document.getElementById('result-area').innerHTML = result;
+};

@@ -85,6 +85,46 @@
         </ul>
     </section>
 
+    <!-- Security Assessor Form -->
+    <section class="security-assessor" id="security-assessor">
+        <div class="section-title">Security Assessor</div>
+        <form class="assessor-form" id="assessor-form">
+            <label for="incident-type">Type of Incident:</label>
+            <select id="incident-type" name="incident-type" required>
+                <option value="data-breach">Data Breach</option>
+                <option value="ransomware">Ransomware Attack</option>
+            </select>
+
+            <label for="business-size">Size of Business:</label>
+            <select id="business-size" name="business-size" required>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+
+            <label for="records-exposed">Number of Records Exposed:</label>
+            <input type="number" id="records-exposed" name="records-exposed" min="1" required>
+
+            <label for="data-type">Type of Data Exposed:</label>
+            <select id="data-type" name="data-type" required>
+                <option value="personal">Personal Data</option>
+                <option value="financial">Financial Data</option>
+                <option value="health">Health Data</option>
+                <option value="corporate">Corporate Data</option>
+            </select>
+
+            <label for="insurance-coverage">Data Breach / Ransomware Insurance Coverage:</label>
+            <select id="insurance-coverage" name="insurance-coverage" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <button type="submit">Calculate Cost</button>
+        </form>
+
+        <div id="result-area" class="result-area"></div>
+    </section>
+
     <!-- Contact -->
     <section class="contact" id="contact">
         <div class="section-title">Contact Us</div>
