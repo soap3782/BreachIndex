@@ -114,5 +114,5 @@ document.getElementById('assessor-form').onsubmit = (e) => {
     `;
 
     // Show result in the result area
-    document.getElementById('result-area').innerHTML = result;
+    document.getElementById('assessor-result-area').innerHTML = result;
 };
