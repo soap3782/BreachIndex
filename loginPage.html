@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BreachIndex | Login</title>
+
+  <!-- Minimal, utility‑first typeface -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --accent: #2563eb;
+      --text: #1e293b;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* Card wrapper */
+    .card {
+      width: 100%;
+      max-width: 440px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem 0.875rem;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      background: #f9fafb;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: #ffffff;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <h1>Create Account</h1>
+    <!-- Change the action/route to match your backend endpoint -->
+    <form action="/signup" method="post" autocomplete="off" novalidate>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="••••••••" minlength="8" required />
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </main>
+  <script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+      e.preventDefault();          // remove this line once you have real auth
+      window.location.href = "homePage.html";
+    });
+  </script>
+</body>
+</html>
