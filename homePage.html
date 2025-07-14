@@ -1,107 +1,145 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>BreachIndex - Web App Susceptibility Checker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4bb.png">
-    <link rel="stylesheet" href="homePage.css">
+  <meta charset="UTF-8" />
+  <title>BreachIndex | Web App Security Scanner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f512.png" />
+
+  <!-- Type & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-hckU…" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Page styles -->
+  <link rel="stylesheet" href="homePage.css" />
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-title">BreachIndex</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#features">Features</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
+
+  <!-- =========  NAVBAR  ========= -->
+  <nav class="navbar">
+    <div class="nav-title"><i class="fa-solid fa-shield-halved"></i>  BreachIndex</div>
+
+    <!-- Hamburger for mobile -->
+    <button id="hamburger" class="hamburger" aria-label="open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Collapse -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- =========  HERO CAROUSEL  ========= -->
+  <section class="carousel" id="showcase">
+    <div class="slides">
+      <div class="slide current">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80" alt="Code audit" />
+        <div class="caption">
+          <h1>Audit Your Code <span>in seconds</span></h1>
+          <p>Paste a URL. Get a risk score. Simple.</p>
         </div>
-    </nav>
+      </div>
 
-<!-- Parallax Section -->
-<div class="parallax"></div>
-
-    <!-- Hero -->
-    <section class="hero">
-        <h1>Test Your Web App's Security</h1>
-        <p>
-            Enter any website URL to analyze its potential hacking susceptibility.<br>
-            Get instant feedback and learn how to improve your web app security! 🔒
-        </p>
-    </section>
-
-    <!-- URL Input + Result -->
-    <section class="url-input-section">
-        <label for="url-input">Paste the web app URL:</label>
-        <input type="url" id="url-input" class="url-bar" placeholder="https://yourapp.com" autocomplete="off" required>
-        <button class="analyze-btn" id="analyze-btn">Analyze</button>
-        <div class="result-area" id="result-area"></div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="section-title">About BreachIndex</div>
-        <p>
-            BreachIndex is a simple, minimalist tool for anyone to get a quick overview of their web app's potential exposure to hacking attempts. We provide simulated analysis using browser-accessible signals, best-practices checks, and fun scoring.
-        </p>
-    </section>
-
-    <!-- Features -->
-    <section class="features" id="features">
-        <div class="section-title">Features</div>
-        <div class="features-list">
-            <div class="feature-item">
-                <strong>✔️ Easy to Use</strong>
-                <p>Just paste your web app’s URL and click analyze!</p>
-            </div>
-            <div class="feature-item">
-                <strong>💡 Modern Design</strong>
-                <p>Minimalist, smooth UI for distraction-free analysis.</p>
-            </div>
-            <div class="feature-item">
-                <strong>🔒 Security Education</strong>
-                <p>Learn about common web vulnerabilities and how to avoid them.</p>
-            </div>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80" alt="Encrypted locks" />
+        <div class="caption">
+          <h1>Stay Ahead <span>of Hackers</span></h1>
+          <p>Actionable advice based on OWASP best practices.</p>
         </div>
-    </section>
+      </div>
 
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-        <div class="section-title">Frequently Asked Questions</div>
-        <ul class="faq-list">
-            <li>
-                <div class="faq-q">Is this a real hacking scanner?</div>
-                <div class="faq-a">For full analysis, server-side tools are required. BreachIndex provides a demo "susceptibility" check based on best practices.</div>
-            </li>
-            <li>
-                <div class="faq-q">Can this scan any website?</div>
-                <div class="faq-a">Due to browser security (CORS), only some public sites allow analysis. For best results, test your own web apps!</div>
-            </li>
-            <li>
-                <div class="faq-q">How can I improve my web app's security?</div>
-                <div class="faq-a">Follow best practices: use HTTPS, sanitize user input, implement proper authentication, keep dependencies updated.</div>
-            </li>
-        </ul>
-    </section>
+      <div class="slide">
+        <img src="https://images.unsplash.com/photo-1559136657-3113d2eac3ae?auto=format&fit=crop&w=1600&q=80" alt="Dashboard" />
+        <div class="caption">
+          <h1>Visual Reports <span>you trust</span></h1>
+          <p>Share easy-to-read results with your team.</p>
+        </div>
+      </div>
+    </div>
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="section-title">Contact Us</div>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="3" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+    <!-- Controls -->
+    <button class="arrow prev" id="prev">&#10094;</button>
+    <button class="arrow next" id="next">&#10095;</button>
+    <div class="dots" id="dots"></div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        &copy; 2025 BreachIndex. All rights reserved.
-    </footer>
+  <!-- =========  URL INPUT SECTION  ========= -->
+  <section class="url-input-section">
+    <label for="url-input"><i class="fa-solid fa-link"></i>  Paste the web app URL:</label>
+    <input type="url" id="url-input" class="url-bar" placeholder="https://yourapp.com" autocomplete="off" required />
+    <button class="analyze-btn" id="analyze-btn">Analyze</button>
+    <div class="result-area" id="result-area"></div>
+  </section>
 
-    <!-- JavaScript -->
-    <script src="homePage.js"></script>
+  <!-- =========  ABOUT  ========= -->
+  <section class="about" id="about">
+    <h2 class="section-title">About BreachIndex</h2>
+    <p>BreachIndex provides a fast, client-side glimpse of potential weaknesses in public-facing sites.
+       It’s perfect for demos or on-the-go security awareness. For deep scans, plug in our server-side API.</p>
+  </section>
+
+  <!-- =========  FEATURES  ========= -->
+  <section class="features" id="features">
+    <h2 class="section-title">Features</h2>
+    <div class="features-list">
+      <div class="feature-item">
+        <i class="fa-solid fa-bolt feature-icon"></i>
+        <h3>Instant Scan</h3>
+        <p>One click → risk score → recommendations.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-palette feature-icon"></i>
+        <h3>Modern UI</h3>
+        <p>Lightweight, distraction-free interface for devs.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-graduation-cap feature-icon"></i>
+        <h3>Security 101</h3>
+        <p>Inline tips for HTTPS, CSP, headers and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========  FAQ  ========= -->
+  <section class="faq" id="faq">
+    <h2 class="section-title">FAQ</h2>
+    <ul class="faq-list">
+      <li>
+        <p class="faq-q">Is this a real hacking scanner?</p>
+        <p class="faq-a">It’s a front-end demo. Full assessments require backend tooling.</p>
+      </li>
+      <li>
+        <p class="faq-q">Will it work on any URL?</p>
+        <p class="faq-a">CORS restrictions apply. Test your own domains for best results.</p>
+      </li>
+      <li>
+        <p class="faq-q">How do I harden my app?</p>
+        <p class="faq-a">Use HTTPS everywhere, validate input, set secure headers and keep dependencies patched.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- =========  CONTACT  ========= -->
+  <section class="contact" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="3" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- =========  FOOTER  ========= -->
+  <footer class="footer">
+    &copy; 2025 BreachIndex. All rights reserved.
+  </footer>
+
+  <!-- =========  SCRIPTS  ========= -->
+  <script src="homePage.js" defer></script>
 </body>
-</html> -->
+</html>
