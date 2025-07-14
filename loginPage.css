@@ -1,0 +1,71 @@
+/* ─── THEME ─── */
+:root{
+    --dark:#000;
+    --card:#111;
+    --accent:#0d6efd;           /* BreachIndex blue */
+    --txt:#e5e5e5;
+    --txt-muted:#8c8c8c;
+    --radius:6px;
+    --shadow:0 0 12px rgba(0,0,0,.5);
+    font-family:'Inter',system-ui,sans-serif;
+  }
+  
+  /* ─── GLOBAL RESET ─── */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--dark);color:var(--txt);min-height:100vh;display:grid;place-items:center;}
+  
+  /* ─── HERO BACKGROUND ─── */
+  .hero-bg{
+    position:fixed;inset:0;
+    background:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1650&q=80') center/cover no-repeat;
+    filter:brightness(.4);
+    z-index:-3;
+  }
+  .gradient{
+    position:fixed;inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.4) 60%,rgba(0,0,0,.9) 100%);
+    z-index:-2;
+  }
+  
+  /* ─── CARD ─── */
+  .card{
+    width:95%;
+    max-width:360px;
+    padding:3.5rem 3rem 3rem;
+    background:var(--card);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+  }
+  .logo{
+    width:130px;object-fit:contain;margin:-1.4rem 0 1.6rem;
+  }
+  .title{font-size:1.7rem;font-weight:700;margin-bottom:1.8rem;}
+  
+  /* ─── FORM ─── */
+  .auth-form{
+    display:flex;flex-direction:column;gap:1.25rem;
+  }
+  .auth-form label{display:flex;flex-direction:column;gap:.4rem;font-size:.95rem;}
+  .auth-form input{
+    padding:.9rem 1rem;border:none;border-radius:var(--radius);background:#333;color:var(--txt);
+  }
+  .auth-form input:focus{outline:3px solid var(--accent);}
+  
+  /* CTA button */
+  .btn-primary{
+    margin-top:.2rem;
+    background:var(--accent);border:none;color:#fff;font-size:1rem;
+    padding:.9rem;border-radius:var(--radius);cursor:pointer;font-weight:600;transition:.25s;
+  }
+  .btn-primary:hover{filter:brightness(1.1);}
+  .row{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;margin-top:.6rem}
+  .row a{color:var(--txt-muted);text-decoration:none;}
+  .row a:hover{text-decoration:underline;}
+  .remember input{vertical-align:middle;margin-right:.3rem}
+  
+  /* ─── FOOT NOTES ─── */
+  .alt{color:var(--txt-muted);font-size:.9rem;margin-top:2rem;}
+  .alt a{color:#fff;text-decoration:none;font-weight:600;}
+  .disclaimer{color:var(--txt-muted);font-size:.7rem;margin-top:.8rem;line-height:1.35;}
+  @media(max-width:480px){ .card{padding:2.5rem 1.6rem;} }
+  
