@@ -3,6 +3,10 @@ const slides      = document.querySelectorAll('.slide');
 const dotsWrapper = document.getElementById('dots');
 const prevBtn     = document.getElementById('prev');
 const nextBtn     = document.getElementById('next');
+const SUPABASE_URL = 'https://supabase.com/dashboard/project/wchhoxcfjhqnniencavo'; 
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndjaGhveGNmamhxbm5pZW5jYXZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1MjA3MjMsImV4cCI6MjA2ODA5NjcyM30._X4Bv4KElfyEdkPvB1hmIj0JUE0cpprpCHMFpva5gdg'; // Replace with your Supabase anon/public key
+
+const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 let idx = 0, auto;
 const AUTO_DELAY = 5000;
